@@ -6,7 +6,7 @@ on:
         description: 'Test'
 
 jobs:
-  say_hello:
+  upload_mod:
     runs-on: windows-latest
     steps:
     - name: Get source
@@ -17,5 +17,10 @@ jobs:
         curl https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip --output steamcmd.zip
         Expand-Archive -Path steamcmd.zip
     
-    - name: Check
-      run: dir
+    - name: login steam
+      run: |
+        cd steamcmd
+        steamcmd.exe +login %STEAM_LOGIN_NAME% %STEAM_LOGIN_PASSWORD%
+      env:
+        STEAM_LOGIN_NAME: ${{ secrets.STEAM_LOGIN_NAME }}
+        STEAM_LOGIN_PASSWORD: ${{ secrets.STEAM_LOGIN_PASSWORD }}
