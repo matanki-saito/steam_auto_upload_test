@@ -24,8 +24,17 @@ jobs:
       run: |
         cd steamcmd
         dir
-        steamcmd.exe +login %STEAM_LOGIN_NAME% %STEAM_LOGIN_PASSWORD% +logout +exit
+        steamcmd.exe +login anonymous +quit
       env:
         STEAM_LOGIN_NAME: ${{ secrets.STEAM_LOGIN_NAME }}
         STEAM_LOGIN_PASSWORD: ${{ secrets.STEAM_LOGIN_PASSWORD }}
+      shell: cmd
+
+    - name:
+      run: |
+        cd logs
+        dir
+        type stderr.txt
+
+      if: ${{ always() }}
       shell: cmd
