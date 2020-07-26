@@ -32,7 +32,7 @@ jobs:
 
     - name:
       run: |
-        cd logs
+        cd steamcmd/logs
         dir
         type stderr.txt
 
