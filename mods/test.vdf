@@ -1,0 +1,11 @@
+"workshopitem"
+{
+	"appid"		"236850"
+	"publishedfileid"		"0"
+	"contentfolder"		"D:\a\steam_auto_upload_test\steam_auto_upload_test\mods\testmod\content\"
+	"previewfile"		"D:\a\steam_auto_upload_test\steam_auto_upload_test\mods\150x150.jpg"
+	"visibility"		"2"
+	"title"		"github actions mod"
+	"description"		"Uploading from github actions script"
+	"changenote"		"Initial Release"
+}
