@@ -2,18 +2,20 @@ name: Manually triggered workflow
 on:
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
+      info:
+        description: 'Test'
 
 jobs:
   say_hello:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-    - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
-        echo "- in ${{ github.event.inputs.home }}!"
+    - name: Get source
+      uses: actions/checkout@v2
+
+    - name: Get steamcmd
+      run: |
+        curl https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip --output steamcmd.zip
+        Expand-Archive -Path steamcmd.zip
+    
+    - name: Check
+      run: dir
