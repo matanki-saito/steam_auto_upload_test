@@ -24,7 +24,7 @@ jobs:
       run: |
         cd steamcmd
         dir
-        steamcmd.exe +login %STEAM_LOGIN_NAME% %STEAM_LOGIN_PASSWORD% +workshop_build_item D:\a\steam_auto_upload_test\steam_auto_upload_test\mods\test.vdf +quit
+        steamcmd.exe +login %STEAM_LOGIN_NAME% %STEAM_LOGIN_PASSWORD% +workshop_build_item ..\mods\test.vdf +quit
       env:
         STEAM_LOGIN_NAME: ${{ secrets.STEAM_LOGIN_NAME }}
         STEAM_LOGIN_PASSWORD: ${{ secrets.STEAM_LOGIN_PASSWORD }}
