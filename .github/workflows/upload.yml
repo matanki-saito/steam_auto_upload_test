@@ -5,6 +5,9 @@ on:
       info:
         description: 'Test'
 
+  push:
+    branches: [ master,develop ]
+
 jobs:
   upload_mod:
     runs-on: windows-latest
